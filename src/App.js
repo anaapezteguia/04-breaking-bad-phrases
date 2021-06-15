@@ -53,7 +53,7 @@ function App() {
     setQuote(phrase[0]);
   };
 
-  // load a quote for the fisrt time
+  // load a quote for the first time
   useEffect(() => {
     requestAPI();
   }, []);
