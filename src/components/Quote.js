@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const QuoteWrapper = styled.div`
   padding: 3rem;
@@ -35,9 +36,6 @@ const QuoteWrapper = styled.div`
 `;
 
 const Quote = ({ quote }) => {
-  // filter if we have a quote or not to display its content
-  //   if (Object.keys(quote).length === 0) return null;
-
   return (
     <QuoteWrapper>
       <h1>{quote.quote}</h1>
@@ -45,5 +43,7 @@ const Quote = ({ quote }) => {
     </QuoteWrapper>
   );
 };
-
+Quote.propTypes = {
+  quote: PropTypes.object.isRequired,
+};
 export default Quote;
