@@ -24,8 +24,24 @@ const Button = styled.button`
   border: 2px solid black;
 `;
 function App() {
-  const requestAPI = () => {
-    console.log('Sending request...');
+  // USUAL FETCH
+  // const requestAPI = () => {
+  //   const api = fetch('https://breaking-bad-quotes.herokuapp.com/v1/quotes');
+  //   const quote = api.then((response) => response.json());
+  //   quote.then((result) => console.log(result));
+  // };
+
+  // ASYNC/AWAIT FETCH
+  // with async/await we stop code execution until we receive data,
+  // we fulfill the promise and .then() are not necessary now,
+  // so our code is cleaner and smarter
+  const requestAPI = async () => {
+    const api = await fetch(
+      'https://breaking-bad-quotes.herokuapp.com/v1/quotes'
+    );
+    // promise
+    const quote = await api.json();
+    console.log(quote[0]);
   };
 
   return (
